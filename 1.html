@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Values Dropdown</title>
+</head>
+<body>
+
+<label for="fruits">Select fruits:</label>
+<select id="fruits" multiple>
+    <option value="apple">Apple</option>
+    <option value="banana">Banana</option>
+    <option value="orange">Orange</option>
+    <option value="grape">Grape</option>
+    <option value="kiwi">Kiwi</option>
+</select>
+
+<button onclick="getSelectedFruits()">Get Selected Fruits</button>
+
+<script>
+function getSelectedFruits() {
+    const selectElement = document.getElementById('fruits');
+    const selectedFruits = Array.from(selectElement.selectedOptions).map(option => option.value);
+
+    alert('Selected fruits: ' + selectedFruits.join(', '));
+}
+</script>
+
+</body>
+</html>
